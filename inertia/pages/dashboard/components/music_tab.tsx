@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { PlayIcon, PauseIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { client } from '@/lib/client'
+import { Card, CardContent } from '@/components/ui/card'
 
 export function MusicTab() {
   const [url, setUrl] = useState('')
@@ -17,27 +19,39 @@ export function MusicTab() {
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="grid grid-cols-3 gap-4">
-        <Button onClick={() => handleAction('play')}>Play</Button>
-        <Button onClick={() => handleAction('pause')}>Pause</Button>
-        <div className="*:not-first:mt-2">
-          <div className="flex rounded-md shadow-xs">
-            <Input
-              className="-me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
-              placeholder="URL de la musique"
-              value={url}
-              onChange={(event) => setUrl(event.currentTarget.value)}
-            />
-            <button
-              className="border-input bg-background text-foreground hover:bg-accent hover:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 inline-flex items-center rounded-e-md border px-3 text-sm font-medium transition-[color,box-shadow] outline-none focus:z-10 focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"
-              onClick={() => handleAction('change', { url })}
-            >
-              Send
-            </button>
-          </div>
+    <Card className="py-4 h-full flex flex-col gap-4">
+      <CardContent className="grid gap-4">
+        <div className="flex items-center gap-2">
+          <Input
+            className="w-full"
+            placeholder="Lien de la musique"
+            value={url}
+            onChange={(event) => setUrl(event.currentTarget.value)}
+          />
+          <Button className="hover:bg-stone-500" onClick={() => handleAction('change', { url })}>
+            Send
+          </Button>
         </div>
-      </div>
-    </div>
+        <div className="text-sm text-red-500">
+          Attention: La musique sera jouée sur toutes les pages ouvertes.
+        </div>
+        <div className="flex items-center gap-2">
+          <Button
+            className="bg-green-500 hover:bg-green-600 flex-1"
+            onClick={() => handleAction('play')}
+          >
+            <PlayIcon className="h-4 w-4" />
+            Play
+          </Button>
+          <Button
+            className="bg-yellow-500 hover:bg-yellow-600 flex-1"
+            onClick={() => handleAction('pause')}
+          >
+            <PauseIcon className="h-4 w-4" />
+            Pause
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
   )
 }
