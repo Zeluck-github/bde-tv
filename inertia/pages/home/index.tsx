@@ -14,7 +14,6 @@ import { EventsTimeline } from './components/events_timeline'
 import { GoogleNewsSection } from './components/google_news_section'
 import { HomeHeader } from './components/home_header'
 import { NewCard } from './components/new_card'
-import { VideoPlayerSection } from './components/video_player_section'
 import { WeatherCard } from './components/weather_card'
 import { useLiveReload } from './hooks/use_live_reload'
 
@@ -42,11 +41,6 @@ export default function HomePage(props: HomePageProps) {
         plugins={[Autoplay({ delay: settings.carouselInterval * 1000 })]}
       >
         <CarouselContent className="items-center">
-          <CarouselItem>
-            <section className="min-h-dvh container mx-auto max-w-6xl flex p-8">
-              <VideoPlayerSection />
-            </section>
-          </CarouselItem>
           <CarouselItem>
             <section className="min-h-dvh w-full flex flex-col gap-8 p-8">
               <HomeHeader />

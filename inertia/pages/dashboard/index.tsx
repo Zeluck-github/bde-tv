@@ -1,4 +1,4 @@
-import { CalendarIcon, MusicIcon, NewspaperIcon, SettingsIcon, WallpaperIcon } from 'lucide-react'
+import { CalendarIcon, NewspaperIcon, SettingsIcon, WallpaperIcon } from 'lucide-react'
 
 import { Head } from '@/components/head'
 import { Page, PageTitle } from '@/components/page'
@@ -8,7 +8,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { DashboardLayout } from '@/layouts/dashboard'
 import type { Event, New, Slide } from '@/types'
 import { EventsTab } from './components/events_tab'
-import { MusicTab } from './components/music_tab'
 import { NewsTab } from './components/news_tab'
 import { SettingsTab } from './components/setttings_tab'
 import { SlidesTab } from './components/slides_tab'
@@ -64,15 +63,6 @@ export default function DashboardIndexPage(props: DashboardPageProps) {
                   />
                   Slides
                 </TabsTrigger>
-                <TabsTrigger value="music" className="group">
-                  <MusicIcon
-                    className="-ms-0.5 me-1.5 opacity-60"
-                    size={16}
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  />
-                  Musique
-                </TabsTrigger>
                 <TabsTrigger value="settings" className="group">
                   <SettingsIcon
                     className="-ms-0.5 me-1.5 opacity-60"
@@ -94,9 +84,6 @@ export default function DashboardIndexPage(props: DashboardPageProps) {
               <div className="flex flex-col gap-4">
                 <EventsTab events={events} />
               </div>
-            </TabsContent>
-            <TabsContent value="music">
-              <MusicTab />
             </TabsContent>
             <TabsContent value="slides">
               <SlidesTab slides={slides} />
