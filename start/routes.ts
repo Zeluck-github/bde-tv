@@ -3,7 +3,6 @@ import transmit from '@adonisjs/transmit/services/main'
 
 import { middleware } from '#start/kernel'
 
-const VideoPlayerController = () => import('#controllers/video_player_controller')
 const SettingsController = () => import('#controllers/settings_controller')
 const AuthController = () => import('#controllers/auth_controller')
 const HomeController = () => import('#controllers/home_controller')
@@ -50,5 +49,3 @@ router
   .middleware(middleware.auth())
 
 router.put('/settings', [SettingsController]).middleware(middleware.auth())
-
-router.post('/video/player', [VideoPlayerController, 'execute'])
