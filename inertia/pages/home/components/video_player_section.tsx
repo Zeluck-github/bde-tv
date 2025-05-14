@@ -11,7 +11,7 @@ export function VideoPlayerSection() {
   const playerRef = useRef<ReactPlayer | null>(null)
 
   const [state, setState] = useState({
-    url: 'https://www.youtube.com/watch?v=pPaw2RzdoK8',
+    url: 'https://www.youtube.com/watch?v=yxqCcFOwi6M',
     pip: false,
     playing: false,
     controls: false,
