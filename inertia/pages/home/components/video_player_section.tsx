@@ -22,7 +22,7 @@ export function VideoPlayerSection() {
     loaded: 0,
     duration: 0,
     playbackRate: 1.0,
-    loop: false,
+    loop: true,
   })
 
   useEffect(() => {
