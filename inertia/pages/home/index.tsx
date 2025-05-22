@@ -42,12 +42,12 @@ export default function HomePage(props: HomePageProps) {
       >
         <CarouselContent className="items-center">
           <CarouselItem>
-            <section className="min-h-dvh w-full flex flex-col gap-8 p-8">
+            <section className="min-h-dvh w-full flex flex-col gap-8 p-8 text-xl">
               <HomeHeader />
               <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-8 gap-8 flex-1">
                 <Card className="col-span-1 xl:col-span-4 flex flex-col">
                   <CardHeader className="p-4">
-                    <CardTitle>Dernières actualités</CardTitle>
+                    <CardTitle className="text-3xl">Dernières actualités</CardTitle>
                   </CardHeader>
                   <div className="relative overflow-y-hidden hover:overflow-y-auto flex-grow min-h-96">
                     <CardContent
@@ -58,8 +58,8 @@ export default function HomePage(props: HomePageProps) {
                     >
                       {news.length === 0 && (
                         <>
-                          <NewspaperIcon className="size-24" />
-                          <p>Aucune actualité pour le moment</p>
+                          <NewspaperIcon className="size-28" />
+                          <p className="text-2xl">Aucune actualité pour le moment</p>
                         </>
                       )}
                       {news.length !== 0 &&
@@ -69,7 +69,7 @@ export default function HomePage(props: HomePageProps) {
                 </Card>
                 <Card className="col-span-1 xl:col-span-2 xl:col-start-7 flex flex-col">
                   <CardHeader className="p-4">
-                    <CardTitle>Météo</CardTitle>
+                    <CardTitle className="text-3xl">Météo</CardTitle>
                   </CardHeader>
                   <CardContent className="p-2 pt-0 flex-grow">
                     <WeatherCard weather={weather} />
@@ -78,7 +78,7 @@ export default function HomePage(props: HomePageProps) {
               </div>
               <Card>
                 <CardHeader className="p-4 pb-2">
-                  <CardTitle>&Eacute;vènements à venir</CardTitle>
+                  <CardTitle className="text-3xl">&Eacute;vènements à venir</CardTitle>
                 </CardHeader>
                 <CardContent className="p-2 pt-0">
                   <EventsTimeline events={events} />
@@ -88,7 +88,7 @@ export default function HomePage(props: HomePageProps) {
           </CarouselItem>
           {googleNews && (
             <CarouselItem>
-              <section className="min-h-dvh container mx-auto max-w-6xl flex p-8">
+              <section className="min-h-dvh container mx-auto max-w-6xl flex p-8 text-xl">
                 <GoogleNewsSection result={googleNews} />
               </section>
             </CarouselItem>
