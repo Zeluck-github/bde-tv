@@ -23,8 +23,8 @@ export function NewCard({ new: data }: NewCardProps) {
         </CardTitle>
       </CardHeader>
       <CardContent className="p-2 pt-0 space-y-2">
-        <CardTitle className="text-2xl font-normal">{data.title}</CardTitle>
-        <CardDescription className="text-xl">{data.description}</CardDescription>
+        <CardTitle className="text-3xl font-normal">{data.title}</CardTitle>
+        <CardDescription className="text-2xl">{data.description}</CardDescription>
       </CardContent>
     </Card>
   )
