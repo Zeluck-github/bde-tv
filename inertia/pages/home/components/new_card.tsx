@@ -15,16 +15,16 @@ export function NewCard({ new: data }: NewCardProps) {
     high: 'bg-red-500',
   }
   return (
-    <Card className={cn('rounded-lg relative pt-1 border-t-0')}>
+    <Card className={cn('rounded-lg relative pt-1 border-t-0 text-xl')}>
       <div className={cn('absolute top-0 inset-x-0 h-1 rounded-t-lg', colors[data.level])} />
       <CardHeader className="p-2">
-        <CardTitle className="font-light">
+        <CardTitle className="font-light text-lg">
           {formatDate(data.createdAt, DateTime.DATE_SHORT)}
         </CardTitle>
       </CardHeader>
       <CardContent className="p-2 pt-0 space-y-2">
-        <CardTitle className="text-lg font-normal">{data.title}</CardTitle>
-        <CardDescription className="text-base">{data.description}</CardDescription>
+        <CardTitle className="text-2xl font-normal">{data.title}</CardTitle>
+        <CardDescription className="text-xl">{data.description}</CardDescription>
       </CardContent>
     </Card>
   )
