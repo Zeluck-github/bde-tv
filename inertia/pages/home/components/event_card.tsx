@@ -13,17 +13,17 @@ interface EventCardProps extends React.ComponentProps<typeof Card> {
 
 export function EventCard({ event, className, ...props }: EventCardProps) {
   return (
-    <Card className={cn('transition-all hover:shadow-lg h-full', className)} {...props}>
-      <CardContent className="p-2 flex flex-col justify-between h-full">
+    <Card className={cn('transition-all hover:shadow-lg h-full text-xl', className)} {...props}>
+      <CardContent className="p-4 flex flex-col justify-between h-full">
         <div className="flex items-start justify-between">
-          <CardTitle className="text-md font-normal leading-tight">{event.title}</CardTitle>
-          <Badge variant="secondary" className="ml-2 text-nowrap">
-            <ClockIcon className="w-3 h-3 mr-1" />
+          <CardTitle className="text-2xl font-normal leading-tight">{event.title}</CardTitle>
+          <Badge variant="secondary" className="ml-2 text-lg text-nowrap py-1 px-2">
+            <ClockIcon className="w-5 h-5 mr-1" />
             {getDuration(event.startAt, event.endAt)}
           </Badge>
         </div>
-        <div className="flex items-center text-sm text-muted-foreground">
-          <CalendarDaysIcon className="w-3 h-3 mr-1" />
+        <div className="flex items-center text-lg text-muted-foreground mt-2">
+          <CalendarDaysIcon className="w-5 h-5 mr-1" />
           <span>
             {formatDateHumanReadeble(event.startAt, DateTime.DATE_MED)}
             {event.startAt !== event.endAt && ` - ${formatDate(event.endAt, DateTime.DATE_MED)}`}
