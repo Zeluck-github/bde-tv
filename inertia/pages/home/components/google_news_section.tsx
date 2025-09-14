@@ -35,6 +35,9 @@ interface GoogleNewCardProps extends React.ComponentProps<typeof Card> {
 }
 
 function GoogleNewCard({ article, ...props }: GoogleNewCardProps) {
+  if (!('source' in article)) {
+    return null
+  }
   return (
     <Card {...props}>
       <CardContent className="p-4 flex flex-row gap-4">
