@@ -26,6 +26,7 @@ const schema = z.object({
   weatherCity: z.string().min(1),
   weatherTtl: z.string().min(1),
   googleNewsTopicToken: z.string(),
+  radioStreamUrl: z.string().url(),
 })
 
 export function SettingsTab() {
@@ -155,6 +156,24 @@ export function SettingsTab() {
                     <FormMessage />
                     <FormDescription>
                       Le token du sujet à afficher pour récupérer les actualités sur Google News
+                    </FormDescription>
+                  </FormItem>
+                )
+              }}
+            />
+            <FormField
+              control={form.control}
+              name="radioStreamUrl"
+              render={({ field }) => {
+                return (
+                  <FormItem className="px-6">
+                    <FormLabel>URL du flux radio</FormLabel>
+                    <FormControl>
+                      <Input placeholder="https://example.com/stream.mp3" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                    <FormDescription>
+                      Laissez vide pour désactiver la lecture automatique sur la page d'accueil
                     </FormDescription>
                   </FormItem>
                 )
