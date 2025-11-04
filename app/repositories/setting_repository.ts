@@ -8,6 +8,7 @@ const DEFAULT_SETTINGS = {
   weatherCity: 'Paris',
   weatherTtl: '30min',
   googleNewsTopicToken: '',
+  radioStreamUrl: '',
 }
 
 export class SettingRepository {

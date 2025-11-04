@@ -21,4 +21,7 @@ export default class Setting extends BaseModel {
 
   @column()
   declare googleNewsTopicToken: string
+
+  @column()
+  declare radioStreamUrl: string
 }

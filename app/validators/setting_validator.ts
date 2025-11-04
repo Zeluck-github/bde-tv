@@ -9,6 +9,7 @@ export const settingValidator = vine.compile(
     weatherCity: vine.string(),
     weatherTtl: vine.string(),
     googleNewsTopicToken: vine.string(),
+    radioStreamUrl: vine.string(),
   })
 )
 

@@ -36,6 +36,9 @@ export default function HomePage(props: HomePageProps) {
   return (
     <>
       <Head title="Accueil" />
+      {settings.radioStreamUrl && (
+        <audio src={settings.radioStreamUrl} autoPlay className="hidden" />
+      )}
       <Carousel
         opts={{ loop: true }}
         plugins={[Autoplay({ delay: settings.carouselInterval * 1000 })]}
